@@ -4,8 +4,8 @@ phases:
   install:
     commands:
       - echo Installing dependencies...
-      - apt-get update -y
-      - apt-get install -y nodejs npm # Ensure Node.js and npm are installed
+      - curl -fsSL https://rpm.nodesource.com/setup_18.x | bash - # Add Node.js repository
+      - yum install -y nodejs # Use yum to install Node.js
 
   pre_build:
     commands:
