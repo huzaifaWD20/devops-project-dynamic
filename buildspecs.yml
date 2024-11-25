@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - apt-get update -y
+      - apt-get install -y nodejs npm # Ensure Node.js and npm are installed
+
+  pre_build:
+    commands:
+      - echo Setting up project...
+      - npm init -y # Initialize Node.js project
+      - npm install # Install dependencies (if any)
+
+  build:
+    commands:
+      - echo Running tests...
+      - node multiply.test.js # Run the test script
+
+artifacts:
+  files:
+    - '**/*'
